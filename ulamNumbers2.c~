@@ -1,0 +1,52 @@
+/*This program takes a number from the user and prints out the corresponding ulam number
+ *@author Gordon Restivo
+ *@date 9/26/2017
+ *@studentNumber 0971067
+ */
+#include <stdio.h>
+
+int main() {
+  int i, j, term = 0, count = 0;
+  int ulamNumArray[1000];//int array where ulam numbers are stored
+  int ulamNumCount = 4;//Number of original base cases
+  int currentNum = 5;//Starts at 5 because there are 4 base cases
+
+  /*Base Cases*/
+  ulamNumArray[0] =1;
+  ulamNumArray[1] =2;
+  ulamNumArray[2] =3;
+  ulamNumArray[3] =4;
+
+  /*Asks user which ulam term they would like to find*/
+  printf("Please input the Ulam Number term you would like to find: ");
+  scanf("%d", &term);
+
+  /*Initializes ulam number array to 0 except for base case values*/
+  for ( i = 4; i < 1000; i++) {
+    ulamNumArray[i] = 0;
+  }
+
+  while (ulamNumCount != term) {//Goes until reaching the user given term
+    for (i = 0; i < ulamNumCount; i++ ) {//Two for loops to add previous ulam numbers
+      for ( j = 0; j < ulamNumCount; j++) {
+        if (ulamNumArray[j] + ulamNumArray[i] == currentNum) {//If equals to the current term
+          if (ulamNumArray[j] != ulamNumArray[i]) {//If numbers are not the same(non-distinct)
+            count++;
+          }
+        }
+      }
+    }
+    if (count == 2) {//only combination is 2 numbers and their opposites Ex(2,1) and (1,2)
+      ulamNumArray[ulamNumCount] = startNum;//add to ulam number array
+      ulamNumCount++;
+    }
+    count = 0;
+    currentNum++;//To check next number
+  }
+
+  //Prints the chosen term
+  printf("Ulam term %d is %d\n", term, ulamNumArray[term - 1]);
+
+return 0;
+}
+# Data-Structures
