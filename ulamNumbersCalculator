@@ -1,7 +1,6 @@
-/*This program takes a number from the user and prints out the corresponding ulam number
+/*This program takes a number (n) from the user and prints out the corresponding nth ulam number
  *@author Gordon Restivo
  *@date 9/26/2017
- *@studentNumber 0971067
  */
 #include <stdio.h>
 
