@@ -1,0 +1,9 @@
+Person1 1 EC
+Person2 2 RC
+Person3 3 SA
+Person4 4 TR
+Person5 5 CV
+PersoT1 2 NC
+PersoT2 3 GI
+PersoT3 5 TR
+PersoT4 1 TR

@@ -1,0 +1,6 @@
+#ifndef HASHFUNCTION_H
+#define HASHFUNCTION_H
+
+int hashFunction (size_t tableSize, char *key);
+
+#endif

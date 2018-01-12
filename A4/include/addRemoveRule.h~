@@ -1,0 +1,10 @@
+#ifndef ADDREMOVE_H
+#define ADDREMOVE_H
+
+#include "BinarySearchTreeAPI.h"
+
+void addRule(Tree *theTree);
+
+void removeRule(Tree *theTree);
+
+#endif

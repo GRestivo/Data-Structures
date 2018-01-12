@@ -1,0 +1,17 @@
+CFLAGS = -std=c99 -Wall -pedantic -g -Iinclude -c
+
+build: main.o book.o testMain.o
+	gcc bin/main.o bin/book.o bin/testMain.o lib/libLinkedList.a -o bin/runMe 
+        
+main.o:
+	gcc $(CFLAGS) src/main.c -o bin/main.o
+
+testMain.o:
+	gcc $(CFLAGS) src/testMain.c -o bin/testMain.o
+
+book.o:
+	gcc $(CFLAGS) src/book.c -o bin/book.o 
+
+clean:
+	rm -f build *.o* *.a* *.gch
+

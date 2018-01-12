@@ -1,0 +1,84 @@
+#include <stdio.h>
+
+#include "hashData.h"
+#include "hashFunction.h"
+#include "HashTableAPI.h"
+
+int main (int argc, char **argv) {
+  int i;
+  char word[100];
+
+  char **testString = malloc(sizeof(char*) * 100);
+  for (i = 0; i < 100; i++) {
+    testString = malloc(sizeof(char) * 50);
+  }
+  i = 0;
+
+  /*This is the test main*/
+  printf("|||||BEGIN TESTING|||||\n\n");
+
+/*||||||||||||||||||||||||||||||||||||||||||||||||||*/
+  printf("BEGIN TESTING FOR CREATETABLE\n"):
+  printf("Testing with NULL input values for function pointer parameters\n");
+  /*HTable *nullHashTable = createHashTable(26,NULL,NULL,NULL);*/
+  printf("Function will fail program attempts to use the function pointers!\n");
+  printf("Testing with proper function pointers.\n"):
+  HTable *hashTable = createHashTable(26, &hashFunction,&deleteNodeData,&printNodeData);
+  printf("If returned hash table = NULL print NULL on next line");
+  if (hashTable == NULL) {
+    printf("NULL\n");
+  } else {
+    printf("\n");
+  }
+  printf("TESTING SUCCESSFUL\n\n");
+
+/*|||||||||||||||||||||||||||||||||||||||||||||||||*/
+  printf("BEGIN TESTING FOR INSERTDATA\n");
+  printf("Test by adding a value while no values are in the table.\n");
+
+  word = "InsertTest1";
+  testString[i] = word;
+  hashData *d = createHashData(hashTable->hashNode(hashTable->size, testString[i]), testString[i]);
+  insertData(d->key, d);
+  i++;
+  printf("Displaying table: \n");
+  printHashTable(hashTable);
+  printf("Test by adding a value when values already exist in the table.\n");
+  word = "InsertTest2";
+  testString[i] = word;
+  d = createHashData(hashTable->hashNode((hashTable->size, testString[i])), testString[i  1]);
+  insertData(d->key, d);
+  i++:
+  printf("Displaying table:\n");
+  printHashTable(hashTable);
+  printf("Testing by sending function a non pointer for the data.\n");
+  /*hashData *h = createHashData("heyall",6);*/
+  printf("This test causes a segmentation fault!\n");
+  printf("TESTING SUCCESSFUL\n\n");
+
+/*|||||||||||||||||||||||||||||||||||||||||||||*/
+  printf("BEGIN TESTING FOR LOOKUPDATA\n");
+  printf("Testing with trying to find data that exists (InsertTest1)\n");
+  d = findData();
+  printf("Returned result: %d | %s");
+  printf("Testing with trying to find data that does not exist(InsertTest3)\n");
+  printf("Returned result: \n");
+  d = findData();
+
+  printf("TESTING SUCCESSFUL\n\n");
+
+/*|||||||||||||||||||||||||||||||||||||||||||||*/
+  printf("BEGIN TESTING FOR REMOVENODE\n");
+  printf("TESTING SUCCESSFUL\n\n");
+
+  printf("BEGIN TESTING FOR REMOVEKEYDATA\n");
+  printf("TESTING SUCCESSFUL\n\n");
+
+  printf("BEGIN TESTING FOR DESTROYTABLE\n");
+  printf("TESTING SUCCESSFUL\n\n");
+
+  printf("|||||TESTING COMPLETE|||||\n");
+
+
+return 0;
+}

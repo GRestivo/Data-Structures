@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
+#include "hashFunction.h"
+
+int hashFunction(size_t tableSize, void *key) {
+  char word[100];
+  char *Key = (char *)key;
+  strcpy(word, Key);
+  char firstLetter = ' ';
+  int numKey = 0;
+
+  firstLetter = tolower(word[0]);
+  numKey = firstLetter % tableSize;
+
+return numKey;
+}

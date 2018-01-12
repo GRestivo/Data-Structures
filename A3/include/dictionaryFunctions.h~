@@ -1,0 +1,12 @@
+#ifndef DICTIONARYFUNCTIONS_H
+#define DICTIONARYFUNCTIONS_H
+
+
+#include "HashTableAPI.h"
+
+
+void spellCheck(HTable *hashTable);
+
+void displayDictionary(HTable *hashTable);
+
+#endif

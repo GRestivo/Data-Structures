@@ -1,0 +1,11 @@
+#ifndef ADDPATIENTS_H
+#define ADDPATIENTS_H
+
+#include <stdlib.h>
+#include "queue.h"
+
+void originalPatients (FILE *fPtr, Queue *q);
+
+void addNewPatient (Queue *q, int entryPlace);
+
+#endif

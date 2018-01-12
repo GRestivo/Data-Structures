@@ -1,0 +1,26 @@
+#ifndef BSTFUNCTIONS_H
+#define BSTFUNCTIONS_H
+
+#include "BinarySearchTreeAPI.h"
+
+TreeNode *insert(TreeNode *currentNode, void *data, Tree *theTree);
+
+TreeNode *findFunction (TreeNode *currentNode, void *data, Tree *theTree);
+
+TreeNode *removeBSTNode (TreeNode *currentNode, void *data, Tree *theTree);
+
+void freeBinTree (Tree *theTree, TreeNode *currentNode);
+
+void printInOrderFunction (Tree *theTree, TreeNode *currentNode);
+
+void printPreOrderFunction (Tree *theTree, TreeNode *currentNode);
+
+void printPostOrderFunction (Tree *theTree, TreeNode *currentNode);
+
+int compare (const void *first, const void *second);
+
+void deleteBSTNode (void *toDelete);
+
+void printNode (void *toBePrinted);
+
+#endif

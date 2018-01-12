@@ -1,0 +1,10 @@
+#ifndef ASSISTANTFUNCTIONS_H
+#define ASSISTANTFUNCTIONS_H
+
+#include "BinarySearchTreeAPI.h"
+
+void modifyRule (Tree *theTree);
+
+void discuss (Tree *theTree);
+
+#endif

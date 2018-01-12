@@ -1,0 +1,8 @@
+#ifndef ASSISTANTFUNCTIONS_H
+#define ASSISTANTFUNCTIONS_H
+
+void modifyRule (Tree *theTree);
+
+void discuss (Tree *theTree);
+
+#endif

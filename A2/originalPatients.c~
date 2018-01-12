@@ -1,0 +1,15 @@
+#include "originalPatients.h"
+
+void originalPatients (FILE *fPtr, Queue *q) {
+  char tempArray[20];
+  char clientID[10];
+  char symptom[2];
+  int priority;
+
+  while (fgets(tempArray, 20, fPtr) != NULL) {
+    sscanf(tempArray, "%c %d %c", &clientID, &priority, &symptom);
+    printf("%c %d %c\n", clientID, priority, symptom);
+  }
+
+return;
+}

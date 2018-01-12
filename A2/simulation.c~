@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "queue.h"
+#include "patient.h"
+#include "simulation.h"
+#include "LinkedListAPI.h"
+
+void simulation (Queue *q) {
+  int time = 1, paperWork = 1, timeFinished = 0;
+  Queue *printQ = malloc(sizeof(Queue));
+  printQ = createQueue(&printPatient, &deletePatient, &compareEntry);
+
+  int i = 0, timeStart;
+
+  printf("Beginning Simulation:\n\n");
+
+  while (q->count > 0) {
+    printf("Q count = %d\n", q->count);
+    i++;
+    Patient *p = (Patient*)peek(q);
+    puts("");
+    printf("%s %d %s %d %d\n", p->clientID, p->priority, p->symptom, p->processTime, p->entryPlace);
+    timeStart = time;
+    printf("P time: %d\n", p->processTime);
+    timeFinished = time + p->processTime;
+    printf("T time: %d\n", timeFinished);
+    time = time + p->processTime;
+    Patient *newP = createPatient(p->clientID, p->priority, p->symptom, timeFinished, p->entryPlace);
+    insertSortedQ(printQ, newP);
+    pop(q);
+    printf("Patient %d | time start: %d | time finished : %d | plus paperWork: %d\n", i, timeStart, timeFinished, timeFinished + paperWork);
+    time++;
+  }
+
+  printf("Patient ID	Priority	Symptom Code	Time Finished\n");
+  printForwards(printQ->list);
+  printf("\n");
+  printf("\nSimulation end\n");
+
+/*  destroy(q);
+  destroy(printQ);
+*/
+}
+

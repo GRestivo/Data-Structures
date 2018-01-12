@@ -1,0 +1,13 @@
+#ifndef HASHDATA_H
+#define HASHDATA_H
+
+#include "LinkedListAPI.h"
+
+typedef struct hashData {
+  char *word;
+  int key;
+} HashData;
+
+HashData *createHashData (char *word, int key);
+
+#endif

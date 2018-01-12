@@ -1,0 +1,19 @@
+#ifndef LISTDATA_H
+#define LISTDATA_H
+
+#include "LinkedListAPI.h"
+
+typedef struct hashData {
+  List *list;
+  int key;
+}HashData;
+
+typedef struct SHashData {
+  sList *slist;
+}sHashData;
+
+HashData *createHashData (List *list, int key);
+
+sHashData *createSHashData (sList *slist);
+
+#endif

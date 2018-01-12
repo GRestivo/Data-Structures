@@ -1,0 +1,77 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
+#include "dictionaryFunctions.h"
+#include "HashTableAPI.h"
+#include "hashData.h"
+
+void spellCheck (HTable *hashTable) {
+  int  i,length, key, correctWords = 0, incWords = 0;
+  char tempLine[100];
+  char *word;
+  FILE *fPtr;
+
+
+  while (1) {
+    printf("Please input the file name of the file to be spell checked: ");
+    fgets(tempLine, 100, stdin);
+    length = strlen(tempLine);
+    for (i = 0; i < length; i++) {
+      if (tempLine[i] == '\n')
+        tempLine[i] = '\0';
+    }
+
+    fPtr = fopen(tempLine,"r");
+
+    if (fPtr == NULL) {
+      printf("Error! Could not find designated file. Try again.\n");
+    } else {
+      break;
+    }
+  }
+
+  while (fgets(tempLine, 100,fPtr) != NULL) {
+    length = strlen(tempLine);
+    for (i = 0; i < length; i++) {
+      if (tempLine[i] == '\n')
+        tempLine[i] = '\0';
+    }
+    tempLine[0] = tolower(tempLine[0]);
+    word = tempLine;
+    key = hashTable->hashFunction(hashTable->size, word);
+    HashData *d = createHashData(word,key);
+    d = findData(hashTable, d);
+    if(d == NULL) {
+      incWords++;
+      printf("%s was not found int the dictionary\n", tempLine);
+    } else {
+      correctWords++;
+    }
+
+  }
+  printf("\nSummary:\n");
+  printf("Correctly spelt words: %d\nIncorrectly spelt words: %d\n\n", correctWords, incWords);
+
+
+
+  fclose(fPtr);
+
+return;
+}
+
+void displayDictionary (HTable *hashTable) {
+  int i = 0;
+
+  printf("\n");
+  for (i = 0; i < hashTable->size; i++) {
+    List *list = hashTable->array[i];
+    if (list->head != NULL) {
+      printForwards(list);
+    }
+  }
+  printf("\n");
+
+return;
+}
