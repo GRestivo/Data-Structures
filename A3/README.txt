@@ -2,10 +2,6 @@ Author: Gordon Restivo
 Student #: 0971067
 Last date modified: 11/14/2017
 
-PLEASE NOTE: For function 4 the output is in the form 'key:word' because in my program the key and row index are the same,
-so to reduce output redundency the index column has been removed
-
-
 Discription of program:
 
 This program reads in a file from the command line, a file that holds a list of words, 1 per line, and inserts each word
