@@ -1,9 +1,5 @@
 Author: Gordon Restivo
-Student #: 0971067
 Last date modified: 11/14/2017
-
-PLEASE NOTE: The remove rule function/command does not work, however it can still check to see if the rule to delete
-			 does not exist and print an error message accordingly
 
 
 Discription of program:
@@ -22,11 +18,9 @@ After every rule from the file has been read in the user will be given a command
    the Binary search tree.
 6) Quits the program
 
-
-
 Assumptions:
 1. AI responses dont need to be coherent
-2. Algorithm for importance is sufficient
+2. Algorithm for importance is sufficient and fully optimized
 
 
 To run main:
