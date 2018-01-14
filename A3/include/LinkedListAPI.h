@@ -1,5 +1,5 @@
 /**
- * @author Michael Ellis (Used by Gordon Restivo)
+ * @author Michael Ellis (Used by Gordon Restivo) (*only the header file was written by Michael Ellis, the full API was written by Gordon Restivo*)
  * @date January 2017 (Date used October 2017)
  * @brief File containing the function definitions of a doubly linked list 
  */
