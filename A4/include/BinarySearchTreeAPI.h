@@ -3,7 +3,7 @@
 
 /**************************************
 Interface for a Binary Tree ADT
-Author:  Judi McCuaig (Borrowed by Gordon Restivo)
+Author:  Judi McCuaig (Borrowed by Gordon Restivo) (*Only header file written by Judi McCuaig, full API written by Gordon Restivo*)
 October, 2012
 Modfied: James Fraser (Nov 2017)
 **************************************/
