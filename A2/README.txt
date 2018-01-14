@@ -1,5 +1,4 @@
 Author: Gordon Restivo
-Student #: 0971067
 Last date modified: 10/22/2017
 
 Discription of program:
@@ -17,8 +16,6 @@ program and not their order based upon their priority.
 Assumptions:
 1. For output, the client ID can not be past a certain length or the output will become distorted
 2. Doctors are somehow super humans who can process patients in 1-10 seconds
-
-NOTE: starvation algorithm was not used in this assignment
 
 To run main:
 1. Type in make
