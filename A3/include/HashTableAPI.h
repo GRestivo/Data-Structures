@@ -1,7 +1,7 @@
 /**
  * @file HashTableAPI.h
- * @author Michael Ellis
- * @date February 2017
+ * @author Gordon Restivo
+ * @date Nov 2017
  * @brief File containing the function definitions of a hash table
  */
 
