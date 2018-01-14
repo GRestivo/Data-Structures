@@ -1,8 +1,0 @@
-#ifndef ADDREMOVE_H
-#define ADDREMOVE_H
-
-void addRule(Tree *theTree);
-
-void removeRule(Tree *theTree);
-
-#endif
